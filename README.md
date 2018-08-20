@@ -24,4 +24,4 @@ Attributes used and their meanings:
 2. Data cleaning, exploratory analysis and visualizations using Python.
 3. Building a predictive model.
 4. Evaluating model based on Confusion matrix metrics and AUC/ROC
-5. Adjusting model.
+5. Adjusting model based on results of step 4.
