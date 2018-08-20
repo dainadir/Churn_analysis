@@ -1,23 +1,23 @@
 # Business case
-
+This Python notebook provides basic client churn prediction analysis. Client is called innactive if he does not import any new product into his store for more than 20 days or if he has uninstalled app from his device.
 
 ## Attributes:
 Attributes used and their meanings:
-- `id `- shop id
-- `prepared` - idk
-- `type` - idk
-- `timezone` - timezone
-- `plan_name` - plan type
-- `country_code` - country or origin
-- `initial_producs` - 
-- `initial_orders` - 
-- `created_at_date` - app installation date
-- `cancelled_at_date`	- date when app was uninstalled
-- `failed_attempts` - failed attempts to install app?
-- `avg_number_of_orders_mnth`	- average number of orders per month
-- `churn`	- churner or not?
-- `days_to_import_first_prod`	- how many days it took to import first product (counted from app installation date)
-- `days_to_sell_first_prod` - how many days it took to sell first product (counted from app installation date). -1 - client did not sell anything
+- `id `: shop id
+- `prepared`: idk
+- `type`: idk
+- `timezone`: timezone
+- `plan_name`: plan type
+- `country_code`: country or origin
+- `initial_producs`: 
+- `initial_orders`: 
+- `created_at_date`: app installation date
+- `cancelled_at_date`: date when app was uninstalled
+- `failed_attempts`: failed attempts to install app?
+- `avg_number_of_orders_mnth`: average number of orders per month
+- `churn`: churner or not?
+- `days_to_import_first_prod`: how many days it took to import first product (counted from app installation date)
+- `days_to_sell_first_prod`: how many days it took to sell first product (counted from app installation date). -1 - client did not sell anything
 
 ## Workflow:
 1. Initial data modelling and preprocessing using SQL Server. Main queries to derive new columns are provided in `SQL queries` folder. 
