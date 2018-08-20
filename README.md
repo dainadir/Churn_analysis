@@ -1,8 +1,8 @@
-## Data preprocessing
+# Business case
 
-Initial data preprocessing was performed using SQL Server. Main queries used are provided in `SQL queries` folder. 
 
 ## Attributes:
+Attributes used and their meanings:
 - `id `- shop id
 - `prepared` - idk
 - `type` - idk
@@ -17,4 +17,11 @@ Initial data preprocessing was performed using SQL Server. Main queries used are
 - `avg_number_of_orders_mnth`	- average number of orders per month
 - `churn`	- churner or not?
 - `days_to_import_first_prod`	- how many days it took to import first product (counted from app installation date)
-- `days_to_sell_first_prod` - how many days it took to sell first product (counted from app installation date)
+- `days_to_sell_first_prod` - how many days it took to sell first product (counted from app installation date). -1 - client did not sell anything
+
+## Workflow:
+1. Initial data modelling and preprocessing using SQL Server. Main queries to derive new columns are provided in `SQL queries` folder. 
+2. Data cleaning, exploratory analysis and visualizations using Python.
+3. Building a predictive model.
+4. Evaluating model based on Confusion matrix metrics and AUC/ROC
+5. Adjusting model.
