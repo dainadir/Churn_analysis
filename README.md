@@ -1,5 +1,5 @@
 # Business case
-This Python notebook provides basic client churn prediction analysis. Client is called innactive if he has uninstalled app from his device or if he did not import any new products into his store for more than 20 calandar days.
+This Python notebook provides basic client churn prediction analysis. Client is called innactive if he has uninstalled app from his device or if he did not import any new products into his store for more than 20 calendar days.
 
 ## Attributes:
 Attributes used and their meanings:
