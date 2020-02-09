@@ -14,7 +14,7 @@ GROUP BY a.shop_id
 ORDER BY a.shop_id
 
 -- --------------------------------------------------------
--- THE PERCENTAGE OF ALL IMPORTS OCCURRING DURING A WEEKDAY
+-- THE % OF ALL IMPORTS OCCURRING DURING A WEEKDAY
 -- --------------------------------------------------------
 
 WITH weekends AS (SELECT id, shop_id, created_at_date, 
