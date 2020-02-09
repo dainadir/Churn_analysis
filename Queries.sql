@@ -100,4 +100,5 @@ SELECT i.shop_id,  f.created_at_date AS shop_created, MAX(i.created_at_date) AS 
 FROM importproducts_modified AS i
 LEFT JOIN final_dataset AS f ON f.id = i.shop_id
 GROUP BY i.shop_id, f.created_at_date 
-ORDER BY 4 ASC
+ORDER BY CASE WHEN f.created_at_date >= '2017-07-01' THEN DATEDIFF (MONTH,f.created_at_date, MAX(i.created_at_date)) ELSE 
+		DATEDIFF (MONTH,f.created_at_date, MAX(i.created_at_date))+1  END ASC
