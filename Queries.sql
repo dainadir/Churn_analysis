@@ -1,5 +1,5 @@
 -- --------------------------------------------------------
--- QUERIES TO DERIVE ADDITIONAL COLUMNS FOR SHOP INFO
+-- QUERIES TO DERIVE ADDITIONAL INFO
 -- --------------------------------------------------------
 
 -- --------------------------------------------------------
@@ -27,7 +27,7 @@ SELECT w.shop_id, COUNT(CASE w.daytype WHEN 'Weekday' THEN 1 ELSE NULL END) AS w
 	ROUND(CAST(COUNT(CASE w.daytype WHEN 'Weekday' THEN 1 ELSE NULL END) AS FLOAT)/CAST(COUNT(ID) AS FLOAT),2) AS percentage_weekday
 FROM weekends AS w
 GROUP BY w.shop_id
-ORDER BY 3 DESC
+ORDER BY COUNT(CASE w.daytype WHEN 'Weekend' THEN 1 ELSE NULL END) DESC
 
 -- --------------------------------------------------------
 -- AVERAGE NUMBER OF SOURCES USED TO IMPORT PRODUCTS
@@ -66,7 +66,7 @@ INNER JOIN
 	FROM importproducts_modified
 	GROUP BY shop_id) AS a ON a.shop_id = g.shop_id
 GROUP BY g.shop_id, a.last_import
-ORDER BY 3 DESC
+ORDER BY CASE WHEN (MAX(g.diff) > 31) OR (DATEDIFF(DAY, a.last_import, '2017/07/24') > 31) THEN 1 ELSE 0 END DESC
 
 -- --------------------------------------------------------
 -- AVERAGE NUMBER OF DIFFERENT PRODUCTS STORED IN THE SHOP PER EACH MONTH
